@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblContactUs>
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3><i class="fa fa-angle-double-right color"></i> List Of Contact</h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+<div class="container">
+    <table class="table table-bordered Grid ">
+        <tr class="GridHeader Gray">
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr class="@(item.ContactStatus == MiracleStone.Domain.Entity.ContactStatus.UnRead ? "bold" : "")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", MVC.Dashboard.ActionNames.AnswerContact, MVC.Dashboard.Name, new { tblContactID = item.TblContactUsID }, new { id = item.TblContactUsID })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

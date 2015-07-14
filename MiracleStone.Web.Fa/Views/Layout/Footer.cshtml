@@ -1,0 +1,65 @@
+﻿@model MiracleStone.Domain.Entity.TblCompanyInfo
+
+<div class="row">
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold">
+
+                &nbsp;&nbsp;درباره ما
+                <i class="fa fa-user"></i>
+            </h5>
+            <p>
+                صنایع سنگ میراکل با همکاری مجموعه کاملی از دو معدن مرمریت کرم و معدن لایم استون و سنگهای ساختمانی زینتی بصورت اسلب و امکانات ابزار زنی با ماشین
+                .... آلات مدرن ایتالیایی با کیفیت بالا احداث شده است . صنایع میراکل مفتخر است که بلوک سنگ مرمریت را جهت مصرف داخل و خارج از کشور تامین نماید 
+                <div class="brand-bg">
+                    <a href="@Model.Facebook" target="_blank" class="facebook"><i class="fa fa-facebook circle-3"></i></a>
+                    <a href="@Model.Twitter" target="_blank" class="twitter"><i class="fa fa-twitter circle-3"></i></a>
+                    <a href="@Model.GooglePlus" target="_blank" class="google-plus"><i class="fa fa-google-plus circle-3"></i></a>
+                    <a href="@Model.LinkedIn" target="_blank" class="linkedin"><i class="fa fa-linkedin circle-3"></i></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold">
+
+                &nbsp;&nbsp;
+                جدید ترین تصاویر<i class="fa fa-picture-o"></i>
+            </h5>
+            @{Html.RenderAction(MVC.Layout.ActionNames.RecentImage, MVC.Layout.Name);}
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold">
+                &nbsp;&nbsp;ارتباط با ما
+                <i class="fa fa-building-o"></i>
+            </h5>
+            <div class="foot-item-content address">
+                <h6 class="bold">
+                    &nbsp;&nbsp;آدرس
+                    <i class="fa fa-home"></i>
+                </h6>
+                <p class="add">
+                    @Model.Address
+                </p>
+                <p class="tel">
+                    تلفن تماس
+                    :
+
+                    @Model.Tel
+
+                    <i class="fa fa-phone"></i>
+                    <br>
+                    @Model.Email  : پست الکترونیک
+
+
+                    <i class="fa fa-envelope"></i>
+                    <br>
+                    ساعت کاری : @Model.BussinessHoursFrom - @Model.BussinessHoursTo<i class="fa fa-calendar"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

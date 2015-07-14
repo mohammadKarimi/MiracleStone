@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblProduct>
+@{
+    ViewBag.Title = "Our Product";
+}
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3><i class="fa fa-angle-double-right color"></i> Our @Request.Url.Segments[3].ToString().Replace("/", "")</h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box-shadow-outer">
+        <div class="box-shadow-block box-shadow-5 text-center"><p><i class="fa fa-tasks red padd-5"></i>@Html.Action(MVC.Categories.GetDescription(int.Parse(@Request.Url.Segments[4].ToString().Replace("/", ""))))</p></div>
+    </div>
+    <br />
+
+    @foreach (var item in Model)
+    {
+         
+        <div class="row">
+            <div class="col-md-5 col-sm-6">
+                <div class="image-style-two">
+                    <img class="img-responsive " src="@Html.Action(MVC.Product.ActionNames.GetDefaultImage, MVC.Product.Name, new { id = item.TblProductID })" alt="">
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="block-heading-two">
+                    <h3><span>@item.Name</span></h3>
+                </div>
+                <p><i class="fa fa-map-marker red"></i>  @item.ProductBy</p>
+                @{Html.RenderAction(MVC.Product.ActionNames.GetAllImage, MVC.Product.Name, new { id = item.TblProductID });}
+            </div>
+        </div>
+        <hr />
+    }
+</div>

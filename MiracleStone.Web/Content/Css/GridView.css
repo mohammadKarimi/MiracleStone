@@ -1,0 +1,218 @@
+﻿.Grid {
+    border: none;
+    background: #ffffff;
+    width: 100%;
+}
+
+    .Grid td {
+        border: none;
+        padding: 0;
+        height: 25px;
+    }
+
+    .Grid th {
+        border: none;
+        padding: 0 5px;
+        font-weight: normal;
+        height: 30px;
+        text-align: center;
+    }
+
+    .Grid, .Grid input {
+        font-size: 11px;
+        color: #626262;
+    }
+
+        .Grid tr.GridHeader {
+            color: #ffffff;
+            background-color: #b01ac2;
+            border: 1px solid #9d39ac;
+        }
+
+            .Grid tr.GridHeader a {
+                color: #FFFFFF;
+            }
+
+            .Grid tr.GridHeader.Gray {
+                color: #ffffff;
+                background-color: #6f6f6f;
+                border: 1px solid #5d5d5d;
+            }
+
+            .Grid tr.GridHeader.Green {
+                color: #ffffff;
+                background-color: #64aa00;
+                border: 1px solid #5b9a00;
+            }
+
+            .Grid tr.GridHeader.Blue {
+                color: #ffffff;
+                background-color: #62b3e2;
+                border: 1px solid #5ca7d3;
+            }
+
+            .Grid tr.GridHeader.Yellow {
+                color: #ffffff;
+                background-color: #e6c300;
+                border: 1px solid #d8b700;
+            }
+
+            .Grid tr.GridHeader.Orange {
+                color: #ffffff;
+                background-color: #e94d00;
+                border: 1px solid #df4a00;
+            }
+
+            .Grid tr.GridHeader.Black {
+                color: #ffffff;
+                background-color: #2e2e2e;
+                border: 1px solid #000;
+            }
+
+        .Grid tr.GridRow {
+            cursor: pointer;
+            border-bottom: 1px solid #dcdcdc;
+            border-left: 1px solid #dcdcdc;
+            border-right: 1px solid #dcdcdc;
+            -moz-transition: color 1s ease, background-color 1s ease;
+            -o-transition: color 1s ease, background-color 1s ease;
+            -webkit-transition: color 1s ease, background-color 1s ease;
+            transition: color 1s ease, background-color 1s ease;
+        }
+
+            .Grid tr.GridRow:hover {
+                color: #b01ac2;
+                background-color: #eeeeee;
+                border-right: 3px solid #b01ac2;
+            }
+
+            /*.Grid tr.GridRow:hover {
+                color: #b01ac2;
+                background-color: #eeeeee;
+            }*/
+
+            .Grid tr.GridRow td {
+                padding: 0 5px;
+            }
+
+        .Grid tr.GridAltRow {
+            cursor: pointer;
+            border-bottom: 1px solid #dcdcdc;
+            border-left: 1px solid #dcdcdc;
+            border-right: 1px solid #dcdcdc;
+            background-color: #eeeeee;
+            -moz-transition: color 1s ease, background-color 1s ease;
+            -o-transition: color 1s ease, background-color 1s ease;
+            -webkit-transition: color 1s ease, background-color 1s ease;
+            transition: color 1s ease, background-color 1s ease;
+            height: 35px;
+        }
+
+            /*.Grid tr.GridAltRow:hover {
+                color: #b01ac2;
+                background-color: #ffffff;
+            }*/
+
+            .Grid tr.GridAltRow:hover {
+                color: #1A86C2;
+                background-color: #ffffff;
+                border-right: 3px solid #1A86C2;
+            }
+
+            .Grid tr.GridAltRow td {
+                padding: 0 5px;
+            }
+
+        .Grid .GridThumb {
+            border: 3px solid #b01ac2 !important;
+            margin: 10px;
+        }
+
+            .Grid .GridThumb.Black {
+                border-color: #1e1e1e !important;
+            }
+
+            .Grid .GridThumb.ray {
+                border-color: #5d5d5d !important;
+            }
+
+            .Grid .GridThumb.Green {
+                border-color: #5b9a00 !important;
+            }
+
+            .Grid .GridThumb.Blue {
+                border-color: #5ca7d3 !important;
+            }
+
+            .Grid .GridThumb.Yellow {
+                border-color: #d8b700 !important;
+            }
+
+            .Grid .GridThumb.Orange {
+                border-color: #df4a00 !important;
+            }
+
+
+        .Grid tbody > tr.selected > td {
+            background: #ffc;
+        }
+
+.GridEmpty {
+    line-height: 30;
+    text-align: center;
+    border-top: none;
+    border: 1px solid #CFC9C9 !important;
+    color: #DA7474;
+    font-size: 13px;
+    padding: 30px !important;
+}
+
+
+tfoot > tr > td {
+    height: 40px;
+    text-align: left;
+    padding-top: 10px !important;
+}
+
+    tfoot > tr > td > a {
+        border: 1px solid #eee;
+        border-radius: 3px;
+        margin-left: -1px;
+        background-color: #FFFFFF;
+        color: #808080;
+        line-height: 1.428571429;
+        padding: 2px 7px;
+        position: relative;
+        text-decoration: none !important;
+    }
+
+        tfoot > tr > td > a:hover {
+            border: 1px solid #eee;
+            border-radius: 3px;
+            margin-left: -1px;
+            background-color: #F0F0F0;
+            color: #74787C;
+            line-height: 1.428571429;
+            padding: 2px 7px;
+            position: relative;
+        }
+
+
+/*#region Compare Style */
+#Compare .Title {
+    background-color: #666;
+    color: #fff;
+    line-height: 30px;
+}
+
+#Compare .CompareValue {
+    background-color: #eee;
+    line-height: 30px;
+    min-height: 30px;
+    text-align: center;
+}
+
+#Compare .Repeater {
+    border-bottom: 1px solid #fff;
+}
+/*#endregion */

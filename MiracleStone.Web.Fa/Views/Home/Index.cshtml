@@ -1,0 +1,191 @@
+﻿@model MiracleStone.Domain.Entity.TblCompanyInfo
+@{
+    ViewBag.Title = "صفحه اصلی";
+}
+
+
+<div class="container">
+    <div id="bs-carousel-1" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+        <ol class="carousel-indicators">
+            <li data-target="#bs-carousel-1" data-slide-to="0" class=""></li>
+            <li data-target="#bs-carousel-1" data-slide-to="1" class=""></li>
+            <li data-target="#bs-carousel-1" data-slide-to="2" class=""></li>
+            <li data-target="#bs-carousel-1" data-slide-to="3" class=""></li>
+            <li data-target="#bs-carousel-1" data-slide-to="4" class=""></li>
+            <li data-target="#bs-carousel-1" data-slide-to="5" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item ">
+                <img src="/FileManager/SlideShow/slab1.jpg" alt="" />
+            </div>
+            <div class="item">
+                <img src="/FileManager/SlideShow/slab2.jpg" alt="" />
+            </div>
+            <div class="item">
+                <img src="/FileManager/SlideShow/slab3.jpg" alt="" />
+            </div>
+            <div class="item">
+                <img src="/FileManager/SlideShow/slab4.jpg" alt="" />
+            </div>
+            <div class="item">
+                <img src="/FileManager/SlideShow/slab5.jpg" alt="" />
+            </div>
+            <div class="item active">
+                <img src="/FileManager/SlideShow/slab6.jpg" alt="" />
+            </div>
+        </div>
+        <a class="left carousel-control" href="#bs-carousel-1" role="button" data-slide="prev">
+            <span class="fa fa-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#bs-carousel-1" role="button" data-slide="next">
+            <span class="fa fa-chevron-right"></span>
+        </a>
+    </div>
+    <br>
+
+    <div class="block-heading-two">
+        <h3><span>چرا میراکل ؟</span></h3>
+        <div class="icon-box-4">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="icon-box-4-item">
+                        <h4><a href="#">تامین</a></h4>
+                        <a href="#" class="icon-box-4-icon bg-color"> <i class="fa fa-tags"></i> </a>
+                        <p>تامین کوپ مرمریت اورینتال،مرمریت نمین و لایم استون </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 pull-left">
+                    <video id="example_video_1" class="video-js vjs-default-skin"
+                           controls preload="auto" width="545" height="400"
+                           poster="~/FileManager/Product/Project2.jpg"
+                           data-setup='{"example_option":true}'>
+                        <source src="~/FileManager/Miracle_High.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="icon-box-4-item">
+
+                        <h4><a href="#">اسلب و تایل سنگ ایرانی</a></h4>
+                        <a href="#" class="icon-box-4-icon bg-brown"> <i class="fa fa-tags"></i>  </a>
+                        <p>
+                            با برخورداری فضایی به مساحت 11 هکتار با 8 خط تولید سنگهای مرمریت ، تراورتن و لایم استون و مرمر با تولید بی وقفه با کیفیت استاندارد  مجموعه ای مطمئن در جهت تامین نیازهای پروژه های بزرگ و کوچک ایجاد نموده است
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="icon-box-4-item">
+
+                        <h4><a href="#">اسلب و تایل سنگ خارجی</a></h4>
+                        <a href="#" class="icon-box-4-icon bg-green">
+                            <i class="fa fa-qrcode"></i>
+                        </a>   <p>
+                            این مجموعه با همکاری شرکت اسپانیایی امکان  ارائه انواع سنگهای اروپایی با ابعاد اسلب را با متراژ  بالا جهت ارائه به پروژه های داخل و خارج از کشور را دارد
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="icon-box-4-item">
+
+                        <h4><a href="#">طراحی و نصب </a></h4>
+                        <a href="#" class="icon-box-4-icon bg-red"> <i class="fa fa-random"></i> </a>
+                        <p>
+                            گروه های مختلف اجرایی جهت اجرای نمای خشک و کلاسیک ، کف لابی و سالن ، راه پله و پارکینگ ، سرویس بصورت تایل و اسلب زیر نظر مهندسین مجرب امکان اجرای تمام موارد  ساختمان را فراهم کرده . مشاوره و طراحی تکمیل کننده تمام موارد اجرایی می باشد
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-9 col-sm-6">
+                    <div class="icon-box-4-item">
+
+                        <h4><a href="#">ابزارزنی</a></h4>
+                        <a href="#" class="icon-box-4-icon bg-yellow">
+                            <i class="fa fa-tasks"></i>
+                        </a>  <p style="direction:rtl">
+
+                            
+                            تجهیزات
+                                  robo wire . cnc . engrave . water jet
+                            امکان ابزار تمام موارد سنگی بدون خطای یک میلی متری را با سرعت بالا در تیراژ قابل توجه فراهم آورده که تولید صنعتی ستون گرد توخالی ، نیم ستون ، سر ستون ، پاستون ، شومینه ، انواع ابزار کرو ، سراهی در اشکال مختلف ، گوی در ابعاد مختلف ، واتر جتهای زینتی از جمله موارد تولیدی می باشد . لازم به ذکر است جهت تولید موارد منحنی عدم پرت سنگ جزو موارد قابل توجه می باشد
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="icon-box-4-item">
+
+                        <h4><a href="#">پشتیبانی آنلاین</a></h4>
+                        <a href="#" class="icon-box-4-icon bg-color"> <i class="fa fa-map-marker"></i> </a>   <p>
+                            شما می توانید از 3 طریق با ما درارتباط باشید . از طریق تماس تلفنی ، ارسال پست الکترونیک ، و یا فرم ارتباط با ما آنلاین
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-heading-two">
+        <h3><span>شرکت میراکل</span></h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-sm-6">
+            <p>
+                صنایع سنگ میراکل با همکاری مجموعه کاملی از دو معدن مرمریت کرم و معدن لایم استون و سنگهای ساختمانی زینتی بصورت اسلب و امکانات ابزار زنی با ماشین آلات مدرن ایتالیایی با کیفیت بالا احداث شده است . صنایع میراکل مفتخر است که بلوک سنگ مرمریت را جهت مصرف داخل و خارج از کشور تامین نماید . که پاسخگوی واحدهای مختلف تولیدی سنگ در داخل و خارج از کشور می باشد. این مجموعه سهم به سزایی در صادرات سنگ به خارج از کشور و واردات اسلبهای ایتالیایی و اسپانیایی به داخل کشور را دارد . امکانات کامل ابزار زنی صنعتی ،طراحی ، ارائه جزئیات اجرایی و نصب فرصت مناسبی جهت ارائه خدمات کامل به مهندسین و سازندگان می باشد
+            </p>
+
+            <br>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div id="bs-carousel-2" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+                <ol class="carousel-indicators">
+                    <li data-target="#bs-carousel-2" data-slide-to="0" class=""></li>
+                    <li data-target="#bs-carousel-2" data-slide-to="1" class="active"></li>
+                    <li data-target="#bs-carousel-2" data-slide-to="2" class=""></li>
+                    <li data-target="#bs-carousel-2" data-slide-to="3" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img src="/FileManager/Company/Company1.jpg" alt="" />
+                    </div>
+                    <div class="item active">
+                        <img src="/FileManager/Company/Company2.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="/FileManager/Company/Company3.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="/FileManager/Company/Company4.jpg" alt="" />
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#bs-carousel-2" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#bs-carousel-2" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <link href="~/Content/Css/video-js.css" rel="stylesheet" />
+
+    <script src="~/Scripts/JQuery/Plugins/video.js"></script>
+    <script>
+        videojs(document.getElementById('example_video_1'), {}, function () {
+            // This is functionally the same as the previous example.
+        });
+    </script>
+}

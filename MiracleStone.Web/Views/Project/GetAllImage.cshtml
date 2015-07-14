@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblImage>
+<div class="owl-nav">
+    <a class="owl-nav-prev"><i class="fa fa-chevron-left"></i></a>
+    <a class="owl-nav-next"><i class="fa fa-chevron-right"></i></a>
+</div>
+
+<div id="owl-carousel" class="owl-carousel owl-theme" data-items="4" data-auto-play="2500" data-pagination="false" data-single-item="false">
+     
+            @foreach (var item in Model)
+                {
+                    <div class="owl-content">
+                        <a href="@item.Address" class="lightbox"><img src="@item.Address" alt="" class="crouselImg img-responsive"></a>
+                    </div>
+                
+                }
+      
+</div>

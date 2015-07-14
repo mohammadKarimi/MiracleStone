@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title  - MiracleStone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Css/GridView.css" rel="stylesheet" />
+    <link href="/Content/Css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/Css/Fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/Content/Css/Template/mgmenu.min.css" rel="stylesheet">
+    <link href="/Content/Css/Template/magnific-popup.css" rel="stylesheet">
+    <link href="/Content/Css/Template/owl.carousel.css" rel="stylesheet">
+    <link href="/Content/Css/Template/style.css" rel="stylesheet">
+    <link href="/Content/Css/Template/skin-lblue.css" rel="stylesheet" id="color_theme">
+    <link href="/Content/Css/Template/custom.css" rel="stylesheet">
+    <link href="~/Content/Css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/Css/owl.carousel.css" rel="stylesheet" />
+
+    <script src="~/Scripts/JQuery/v1/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/JQuery/bootstrap.min.js"></script>
+    <script src="~/Scripts/JQuery/Plugins/Menu/mgmenu.min.js"></script>
+    <script src="~/Scripts/JQuery/Plugins/Menu/mgmenu_plugins.js"></script>
+    <script src="~/Scripts/JQuery/Plugins/popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/JQuery/Plugins/AutoSlide/owl.carousel.js"></script>
+    <script src="~/Scripts/JQuery/Application/main.js"></script>
+</head>
+<body>
+    <div class="outer">
+        @{Html.RenderAction(MVC.Layout.ActionNames.Header, MVC.Layout.Name);}
+        <div class="header-2">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="~/Content/Image/Company/logo-alfa.png" alt="" width="320" height="100" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="navigation  ">
+                            <div id="mgmenu1" class="mgmenu_container">
+                                <ul class="mgmenu">
+                                    <li class="mgmenu_button">Menu</li>
+                                    
+                                    <li><a href="@Url.Action(MVC.Home.ActionNames.Index, MVC.Home.Name)" style="">Home</a></li>
+                                    <li><a href="@Url.Action(MVC.Product.ActionNames.ListOfProduct, MVC.Product.Name)">Products</a></li>
+                                    <li><a href="@Url.Action(MVC.Project.ActionNames.ListOfProjects, MVC.Project.Name)">Projects</a></li>
+                                    <li><a href="@Url.Action(MVC.Dashboard.ActionNames.CompanyInfo, MVC.Dashboard.Name)">CompanyInfo</a></li><li><a href="@Url.Action(MVC.Dashboard.ActionNames.ContactUs, MVC.Dashboard.Name)">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-block">
+            <div class="r-slider">
+            </div>
+            @RenderBody()
+        </div>
+        <div class="foot">
+            <div class="container">
+                @{Html.RenderAction(MVC.Layout.ActionNames.Footer, MVC.Layout.Name);}
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <p class="pull-left">Copyright © @DateTime.Now.Year - <a href="#">Miracle Stone</a></p>
+                <ul class="list-inline pull-right">
+                    <li>
+                        <a href="@Url.Action(MVC.Home.ActionNames.Index, MVC.Home.Name)">Home</a>
+                    </li>
+                    <li><a href="@Url.Action(MVC.Project.ActionNames.List, MVC.Project.Name)">Projects</a></li>
+                    <li><a href="@Url.Action(MVC.Home.ActionNames.AboutUs, MVC.Home.Name)">About</a></li>
+                    <li><a href="@Url.Action(MVC.Home.ActionNames.ContactUs,MVC.Home.Name)">Contact</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </footer>
+    </div>
+    <span class="totop"><a href=""><i class="fa fa-angle-up bg-color"></i></a></span>
+    @Scripts.Render(Links.Bundles.Scripts.CoreScripts)
+    @RenderSection("scripts", false)
+</body>
+</html>

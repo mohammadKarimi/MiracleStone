@@ -1,0 +1,60 @@
+﻿@model MiracleStone.Domain.Entity.TblContactUs
+@{
+    ViewBag.Title = "AnswerContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+ 
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3><i class="fa fa-angle-double-right color"></i> Detail Of Contact</h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+ 

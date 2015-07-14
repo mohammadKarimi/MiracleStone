@@ -1,0 +1,77 @@
+﻿@model MiracleStone.Domain.Entity.TblUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignIn</title>
+    <link href="~/Content/Css/Fonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/animation.css" rel="stylesheet" />
+    <link href="~/Content/Css/authenty.css" rel="stylesheet" />
+</head>
+<body>
+    <section id="password_recovery" class="authenty password-recovery" style="min-height:680px">
+        <div class="section-content">
+            <div class="wrap">
+                <div class="container">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-5 brand animated fadeInUp" data-animation="fadeInUp">
+
+                                <img src="/Content/Image/Company/logo-alfa.png" alt="" width="300" />
+                            </div>
+                            <div class="col-sm-1 hidden-xs">
+                                <div class="horizontal-divider"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 main animated fadeInLeft" data-animation="fadeInLeft" data-animation-delay=".5s">
+                                <div class="row animated fadeInLeft" data-animation="fadeInLeft">
+                                    <div class="col-md-12 col-md-offset-1">
+                                        @using (Html.BeginForm())
+                                        {
+
+
+                                            <div class="normal-signin">
+                                                <div class="title">
+                                                    <h3>Sign In</h3>
+                                                </div>
+                                                <div class="form-main">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <div class="un-wrap">
+                                                                <i class="fa fa-user"></i>
+                                                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "UserName" })
+                                                                @Html.ValidationMessageFor(model => model.UserName)
+                                                            </div>
+                                                            <div class="pw-wrap">
+                                                                <i class="fa fa-lock"></i>
+                                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                                                @Html.ValidationMessageFor(model => model.Password)
+                                                            </div>
+                                                            <div class="row top-buffer">
+                                                                <div class="col-md-4 col-md-offset-8">
+                                                                    <button type="submit" class="btn btn-black col-md-12 reset">Sign In</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

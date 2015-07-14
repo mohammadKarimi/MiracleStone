@@ -1,0 +1,27 @@
+﻿@model MiracleStone.Domain.Entity.TblContactUs
+
+@using (Html.BeginForm(MVC.Home.ActionNames.ContactUs, MVC.Home.Name, FormMethod.Post, new { }))
+{
+    <div class="form-group">
+        @Html.TextBoxFor(X => X.FullName, new { @placeholder = "نام", @class = "form-control" })
+        @Html.ValidationMessageFor(X => X.FullName)
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(X => X.Email, new { @placeholder = "پست الکترونیک", @class = "form-control" })
+        @Html.ValidationMessageFor(X => X.Email)
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(X => X.CompanyName, new { @placeholder = "نام شرکت", @class = "form-control" })
+        @Html.ValidationMessageFor(X => X.CompanyName)
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(X => X.Subject, new { @placeholder = "موضوع", @class = "form-control" })
+        @Html.ValidationMessageFor(X => X.Subject)
+    </div>
+    <div class="form-group">
+        @Html.TextAreaFor(X => X.Message, new { @placeholder = "پیام", @class = "form-control", @rows = "7" })
+        @Html.ValidationMessageFor(X => X.Message)
+    </div>
+    <button type="submit" class="btn btn-blue">ارسال</button>
+    <button type="reset" class="btn btn-red">از نو</button>
+}

@@ -1,0 +1,39 @@
+﻿@model MiracleStone.Domain.Entity.TblCompanyInfo
+
+<div class="row">
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold"><i class="fa fa-user"></i>&nbsp;&nbsp;About</h5>
+            <p>@Html.Raw(Model.AboutUs.Substring(0, 250))....</p>
+            <div class="brand-bg">
+                <a href="@Model.Facebook" target="_blank" class="facebook"><i class="fa fa-facebook circle-3"></i></a>
+                <a href="@Model.Twitter" target="_blank" class="twitter"><i class="fa fa-twitter circle-3"></i></a>
+                <a href="@Model.GooglePlus" target="_blank" class="google-plus"><i class="fa fa-google-plus circle-3"></i></a>
+                <a href="@Model.LinkedIn" target="_blank" class="linkedin"><i class="fa fa-linkedin circle-3"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Recent Images</h5>
+            @{Html.RenderAction(MVC.Layout.ActionNames.RecentImage, MVC.Layout.Name);}
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="foot-item">
+            <h5 class="bold"><i class="fa fa-building-o"></i>&nbsp;&nbsp;Contact Us</h5>
+            <div class="foot-item-content address">
+                <h6 class="bold"><i class="fa fa-home"></i>&nbsp;&nbsp;Address </h6>
+                <p class="add">
+                    @Model.Address
+                </p>
+                <p class="tel">
+                    <i class="fa fa-phone"></i> Tel : @Model.Tel<br>
+                    <i class="fa fa-envelope"></i>  Mail : @Model.Email<br>
+                    <i class="fa fa-calendar"></i> Business Hours : @Model.BussinessHoursFrom - @Model.BussinessHoursTo
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

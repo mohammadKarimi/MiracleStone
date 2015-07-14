@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.Gallery>
+@{
+    ViewBag.Title = "Gallery";
+    var Class = Model.Select(X => X.Class).Distinct();
+}
+
+ 
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3>  گالری محصولات <i class="fa fa-angle-double-left color"></i></h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="portfolio pf-two">
+        <div class="portfolio-content">
+            <div class="container">
+                <div id="filters">
+                    <a href="#" data-filter="*" class="btn btn-color">All</a>
+                    @foreach (var item in Class)
+                    {
+                        <a href="#" data-filter=".@item" class="btn btn-color">@item</a>
+                    }
+                </div>
+            </div>
+            <div id="portfolio">
+                @foreach (var item in Model)
+                {
+                    <div class="p-element design @item.Class">
+                        <div class="element">
+                            <div class="image-style-two">
+                                <img class="img-responsive crouselImg300-200" src="@item.Address" alt="">
+                                <div class="image-hover">
+                                    <div class="image-caption">
+                                        <h4>@item.Name</h4>
+                                        <a href="@item.Address" class="lightbox"><i class="fa fa-search"></i></a> &nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/JQuery/Plugins/isotope/imagesloaded.min.js"></script>
+    <script src="~/Scripts/JQuery/Plugins/isotope/isotope.js"></script>
+    <script type="text/javascript">
+        var $container = $('#portfolio');
+        $container.imagesLoaded(function () {
+            $container.fadeIn(1000).isotope({
+                layoutMode: 'fitRows',
+                itemSelector: '.p-element'
+            });
+        });
+        $('#filters a').click(function () {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector });
+            return false;
+        });
+    </script>
+}

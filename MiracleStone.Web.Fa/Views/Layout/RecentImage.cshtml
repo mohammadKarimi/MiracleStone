@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblImage>
+@{
+    int Counter = 0;
+    bool HaveImage = false;
+}
+<div class="foot-item-content">
+    @foreach (var item in Model)
+    {
+        HaveImage = true;
+        if (Counter == 0)
+        {
+          Response.Write("<div class='foot-recent-img'>");
+        }
+        if (Counter == 3)
+        {
+            Response.Write("</div><div class='foot-recent-img'>");
+            Counter = 0;
+        }
+        Response.Write("<a href='" + item.Address + "' class='lightbox'><img src='" + item.Address + "'  class='img-responsive img-thumbnail'></a>");
+        Counter++;
+    }
+    @if (HaveImage) { Response.Write("</div>"); }
+</div>

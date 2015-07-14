@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblProjects>
+@{
+    ViewBag.Title = "Our Project";
+}
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3><i class="fa fa-angle-double-right color"></i> Our Projects</h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="box-shadow-outer">
+        <div class="box-shadow-block box-shadow-5 text-center">
+            <p>
+                <i class="fa fa-tasks red padd-5"></i>
+                Design and installation: with a team of skilled architects we can design and install exterior and interior such as landscape, staircase, bathroom and parking.
+                Our team of expertise will guide you through all stages of your project
+            </p>
+        </div>
+    </div>
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-5 col-sm-6">
+                <div class="image-style-one img-box-5-img">
+                    <img class="img-responsive" src="@Html.Action(MVC.Project.ActionNames.GetDefaultImage, MVC.Project.Name, new {id=item.TblProjectsID })" alt="">
+
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="block-heading-two">
+                    <h3><span>@item.Name</span></h3>
+                </div>
+                <p><i class="fa fa-map-marker red"></i>  @item.Location</p>
+                <p><i class="fa fa-random red"></i> Progress : @item.Progress% Complete</p>
+                <div class="progress pb-sm">
+                    <div class="progress-bar progress-bar-black" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: @item.Progress%">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                @{Html.RenderAction(MVC.Project.ActionNames.GetAllImage, MVC.Project.Name, new { id = item.TblProjectsID });}
+
+            </div>
+        </div>
+        <hr />
+    }
+</div>

@@ -1,0 +1,78 @@
+﻿@model MiracleStone.Domain.Entity.TblCompanyInfo
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+
+<div class="contact-us-one">
+
+    <div class="contact-map">
+       @Html.Raw(Model.GoogleMapAddress)
+    </div>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="text-center">
+                    <div class="contact-item">
+                        <i class="fa fa-phone bg-lblue circle-3"></i>
+                        <h5>Call Us</h5>
+                        <p>
+                            Tel : @Model.Tel <br>
+                            Mob : @Model.Mobile <br>
+                            Fax : @Model.Fax
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope bg-green circle-3"></i>
+                        <h5>Mail Us</h5>
+                        <p>
+                            @Model.Email<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-6">
+                <div class="text-center">
+                    <div class="contact-item">
+                        <i class="fa fa-building-o bg-red circle-3"></i>
+                        <h5>Address</h5>
+                        <p>
+                            @Model.Address
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-calendar bg-purple circle-3"></i>
+                        <h5>Business Hours</h5>
+                        <p>
+                            Time : @Model.BussinessHoursFrom to @Model.BussinessHoursFrom <br>
+                            @Model.BussinessHoursDescription
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-6">
+                <div class="contact-item">
+                    <div class="contact-form">
+                        <h5>Contact Form</h5>
+                        @{Html.RenderPartial(MVC.Home.Views.Partial.ContactForm, new MiracleStone.Domain.Entity.TblContactUs());}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <div class="contact-item">
+                    <div class="brand-bg">
+                        <h5>Connect</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="@Model.Facebook" target="_blank" class="facebook"><i class="fa fa-facebook circle-2"></i> Facebook</a></li>
+                            <li><a href="@Model.Twitter" target="_blank" class="twitter"><i class="fa fa-twitter circle-2"></i> Twitter</a></li>
+                            <li><a href="@Model.GooglePlus" target="_blank" class="google-plus"><i class="fa fa-google-plus circle-2"> </i> Google-plus</a></li>
+                            <li><a href="@Model.LinkedIn" target="_blank" class="linkedin"><i class="fa fa-linkedin circle-2"></i> Linkedin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

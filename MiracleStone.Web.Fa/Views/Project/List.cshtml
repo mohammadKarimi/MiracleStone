@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblProjects>
+@{
+    ViewBag.Title = "پروژه های ما";
+}
+
+<div class="page-heading-two">
+    <div class="container">
+        <div>
+            <h3> پروژه های ما<i class="fa fa-angle-double-left color"></i></h3>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="box-shadow-outer">
+        <div class="box-shadow-block box-shadow-5 text-center">
+            <p>
+
+                گروه های مختلف اجرایی جهت اجرای نمای خشک و کلاسیک ، کف لابی و سالن ، راه پله و پارکینگ ، سرویس بصورت تایل و اسلب زیر نظر مهندسین مجرب امکان اجرای تمام موارد  ساختمان را فراهم کرده . مشاوره و طراحی تکمیل کننده تمام موارد اجرایی می باشد
+            </p>
+        </div>
+    </div>
+    <br />
+    @foreach (var item in Model)
+    {
+        var url = MVC.Project.GetDefaultImage(item.TblProjectsID);
+        string finalurl = url.ToString();
+        if (!url.ToString().StartsWith("http://miraclestone.org"))
+        {
+            finalurl = "http://miraclestone.org" + url.ToString();
+        }
+        <div class="row">
+            <div class="col-md-5 col-sm-6">
+                <div class="image-style-one img-box-5-img">
+                    <img class="img-responsive" src="@finalurl" alt="">
+
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="block-heading-two">
+                    <h3><span>@item.NameFa</span></h3>
+                </div>
+                <p>  @item.LocationFa <i class="fa fa-map-marker red"></i></p>
+                <p> درصد پیشرفت : %@item.Progress <i class="fa fa-random red"></i></p>
+                <div class="progress pb-sm">
+                    <div class="progress-bar progress-bar-black" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: @item.Progress%">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                @{Html.RenderAction(MVC.Project.ActionNames.GetAllImage, MVC.Project.Name, new { id = item.TblProjectsID });}
+
+            </div>
+        </div>
+        <hr />
+    }
+</div>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MiracleStone.Domain.Entity.TblImage>
+@{
+    ViewBag.Title = "Add New Image";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var url = Url.Action(MVC.Image.ActionNames.Upload, MVC.Image.Name).ToString() + "/" + Request.Url.Segments[3].ToString().Replace("/", "") + "/" + Request.Url.Segments[4].ToString().Replace("/", "");
+}
+<link href="~/Content/Css/PlUpload/jquery.plupload.queue.css" rel="stylesheet" />
+
+<div class="container">
+
+    <div class="block-heading-two">
+        <h3><span>List Images</span></h3>
+    </div>
+    <div class="img-box-1 text-center">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-6 @item.IsDefault">
+                        <div class="img-box-1-item">
+                            <a href="@item.Address" class="lightbox"><img src="@item.Address" alt="" class="img-responsive img-box"></a>
+                            <div class="image-hover">
+                                <div class="image-caption">
+                                    <a href="@Url.Action(MVC.Image.ActionNames.Remove, MVC.Image.Name, new { id = item.TblImageID, tableName = item.TableName, fk = item.ForeignKey })"><i class="fa fa-times bg-red"></i></a>
+                                    <a href="@Url.Action(MVC.Image.ActionNames.SetDefault, MVC.Image.Name, new { id = item.TblImageID, tableName = item.TableName, fk = item.ForeignKey })"  >
+                                        <i class="fa fa-check bg-color"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm(MVC.Image.ActionNames.Upload, MVC.Image.Name, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <br />
+        @Html.ValidationSummary(true)
+        <div id="uploader">
+            <div class="editor-label">
+                Select Files
+            </div>
+            <div class="editor-field">
+                <input type="file" name="file" id="files" />
+                @Html.ValidationMessage("file")
+            </div>
+        </div>
+    }
+
+    @section Scripts{
+        <script src="~/Scripts/JQuery/Plugins/PlUpload/plupload.full.js"></script>
+        <script src="~/Scripts/JQuery/Plugins/PlUpload/jquery.plupload.queue.js"></script>
+        <script>
+            $(function () {
+                $("#uploader").pluploadQueue({
+                    runtimes: 'html5,gears,flash,silverlight,browserplus,html4',
+                    url: '@url',
+                    max_file_size: '50mb',
+                    chunk_size: '1mb',
+                    unique_names: false,
+                    filters: [
+                        { title: "All files", extensions: "*" }
+                    ]
+                });
+                var uploader = $('#uploader').pluploadQueue();
+                // Client side form validation
+                $('form').submit(function () {
+                    if (uploader.files.length > 0) {
+                        uploader.bind('StateChanged', function () {
+                            if (uploader.files.length === (uploader.total.uploaded + uploader.total.failed)) {
+                                $('form')[0].submit();
+                            }
+                        });
+                        uploader.start();
+                    } else {
+                        alert('Please Select File ');
+                    }
+                    return false;
+                });
+            });
+        </script>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@model MiracleStone.Domain.Entity.TblCompanyInfo
+<div class="top-bar">
+    <div class="container">
+        <div class="tb-contact pull-left">
+            <i class="fa fa-envelope color"></i> &nbsp; <a href="mailto:@Model.Email">@Model.Email</a>
+            <i class="fa fa-phone color"></i> &nbsp; @Model.Mobile
+        </div>
+        <div class="tb-language dropdown pull-right">
+            <a href="#" data-target="#" data-toggle="dropdown"><i class="fa fa-globe"></i> English <i class="fa fa-angle-down color"></i></a>
+            <ul class="dropdown-menu dropdown-mini" role="menu">
+                <li><a href="http://fa.miraclestone.org/">Persian</a></li>
+            </ul>
+        </div>
+        <div class="tb-social pull-right hidden-xs">
+            <div class="brand-bg text-right">
+                <a href="@Model.Facebook" class="facebook" target="_blank"><i class="fa fa-facebook square-2 rounded-1"></i></a>
+                <a href="@Model.Twitter" class="twitter" target="_blank"><i class="fa fa-twitter square-2 rounded-1"></i></a>
+                <a href="@Model.GooglePlus" class="google-plus" target="_blank"><i class="fa fa-google-plus square-2 rounded-1"></i></a>
+                <a href="@Model.LinkedIn" class="linkedin" target="_blank"><i class="fa fa-linkedin square-2 rounded-1"></i></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
