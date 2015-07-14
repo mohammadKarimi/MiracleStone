@@ -9,7 +9,7 @@ namespace MiracleStone.Web.Controllers
 {
     public partial class CategoriesController : Controller
     {
-        private MiracleStoneDbContext db = new MiracleStoneDbContext();
+           private MiracleStoneDbContext db = new MiracleStoneDbContext();
         public virtual ActionResult GetDescription(int id)
         {
             var Query = db.TblCategories.Find(id);
