@@ -13,11 +13,6 @@
 </div>
 
 <div class="container">
-    <div class="box-shadow-outer">
-        <div class="box-shadow-block box-shadow-5 text-center"><p> @Html.Action(MVC.Categories.GetDescription(int.Parse(@Request.Url.Segments[4].ToString().Replace("/", ""))))</p></div>
-    </div>
-    <br />
-
     @foreach (var item in Model)
     {
         var url = MVC.Product.GetDefaultImage( item.TblProductID );
