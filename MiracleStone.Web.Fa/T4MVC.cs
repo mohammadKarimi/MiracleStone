@@ -30,6 +30,7 @@ public static partial class MVC
     public static MiracleStone.Web.Controllers.HomeController Home = new MiracleStone.Web.Controllers.T4MVC_HomeController();
     public static MiracleStone.Web.Controllers.ImageController Image = new MiracleStone.Web.Controllers.T4MVC_ImageController();
     public static MiracleStone.Web.Controllers.LayoutController Layout = new MiracleStone.Web.Controllers.T4MVC_LayoutController();
+    public static MiracleStone.Web.Fa.Controllers.MaterialController Material = new MiracleStone.Web.Fa.Controllers.T4MVC_MaterialController();
     public static MiracleStone.Web.Controllers.ProductController Product = new MiracleStone.Web.Controllers.T4MVC_ProductController();
     public static MiracleStone.Web.Controllers.ProjectController Project = new MiracleStone.Web.Controllers.T4MVC_ProjectController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();

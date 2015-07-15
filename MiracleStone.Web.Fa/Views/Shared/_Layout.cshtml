@@ -29,55 +29,65 @@
         @{Html.RenderAction(MVC.Layout.ActionNames.Header, MVC.Layout.Name);}
         <div class="header-2">
             <div class="container">
-                <div class="row ">
-                    <div class="col-md-3">
+                <div class="row "><div class="col-md-10">
+    <div class="navigation  " style=" float: right;">
+        <div id="mgmenu1" class="mgmenu_container">
+            <ul class="mgmenu">
+                <li class="mgmenu_button">منو</li>
+
+
+
+                <li><a href="http://miraclestone.org/dashboard/signIn">ورود به سیستم</a></li>
+                <li><a href="@Url.Action(MVC.Project.ActionNames.List, MVC.Project.Name)">پروژه ها</a></li>
+
+                <li><a href="@Url.Action(MVC.Home.ActionNames.ContactUs,MVC.Home.Name)">تماس با ما</a></li>
+
+
+                <li><a href="@Url.Action(MVC.Home.ActionNames.AboutUs, MVC.Home.Name)">درباره ما</a></li>
+
+                <li><a href="@Url.Action(MVC.Gallery.ActionNames.Show, MVC.Gallery.Name)">گالری</a></li>
+
+                <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "CuttingMachine", categoriesID = 8 })">ماشین ابزار زنی</a></li>
+
+                <li>
+                    <a href="#" style="">اسلب <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown_container dropdown_2columns" style="display: none;">
+                        <ul class="dropdown_flyout">
+                            <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "PersianSlab", categoriesID = 5 })">اسلب ایرانی</a></li>
+                            <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "SpanishSlab", categoriesID = 6 })">اسلب خارجی</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" style="">بلاک <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown_container dropdown_2columns" style="display: none;">
+                        <ul class="dropdown_flyout">
+                            <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "Namin", categoriesID = 2})"> نمین</a></li>
+                            <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "Oriental", categoriesID = 3 })">اورینتال</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" style="">مواد پوشش دهی سنگ <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown_container dropdown_2columns" style="display: none;">
+                        <ul class="dropdown_flyout">
+                            <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Detergents", categoriesID = 10 })">پاک کننده ها</a></li>
+                            <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Protectors", categoriesID = 11 })">محافظت کننده ها</a></li>
+                            <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Finishers", categoriesID = 12 })">واکس ها</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="@Url.Action(MVC.Home.ActionNames.Index, MVC.Home.Name)" style="">خانه</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+                    <div class="col-md-2">
                         <div class="logo">
-                            <img src="~/Content/Image/Company/logo-alfa.png" alt="" width="290" height="100" />
+                            <img src="~/Content/Image/Company/logo-alfa.png" alt="" width="250" height="100" />
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div class="navigation  ">
-                            <div id="mgmenu1" class="mgmenu_container">
-                                <ul class="mgmenu">
-                                    <li class="mgmenu_button">منو</li>
-
-
-
-                                    <li><a href="http://miraclestone.org/dashboard/signIn">ورود به سیستم</a></li>
- <li><a href="@Url.Action(MVC.Project.ActionNames.List, MVC.Project.Name)">پروژه ها</a></li>
-
-                                    <li><a href="@Url.Action(MVC.Home.ActionNames.ContactUs,MVC.Home.Name)">تماس با ما</a></li>
-
-
-                                    <li><a href="@Url.Action(MVC.Home.ActionNames.AboutUs, MVC.Home.Name)">درباره ما</a></li>
-
-                                    <li><a href="@Url.Action(MVC.Gallery.ActionNames.Show, MVC.Gallery.Name)">گالری</a></li>
-
-                                    <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "CuttingMachine", categoriesID = 8 })">ماشین ابزار زنی</a></li>
-
-                                    <li>
-                                        <a href="#" style="">اسلب <i class="fa fa-angle-down"></i></a>
-                                        <div class="dropdown_container dropdown_2columns" style="display: none;">
-                                            <ul class="dropdown_flyout">
-                                                <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "PersianSlab", categoriesID = 5 })">اسلب ایرانی</a></li>
-                                                <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "SpanishSlab", categoriesID = 6 })">اسلب خارجی</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#" style="">بلاک <i class="fa fa-angle-down"></i></a>
-                                        <div class="dropdown_container dropdown_2columns" style="display: none;">
-                                            <ul class="dropdown_flyout">
-                                                <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "Namin", categoriesID = 2})"> نمین</a></li>
-                                                <li><a href="@Url.Action(MVC.Product.ActionNames.List, MVC.Product.Name, new { title = "Oriental", categoriesID = 3 })">اورینتال</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="@Url.Action(MVC.Home.ActionNames.Index, MVC.Home.Name)" style="">خانه</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

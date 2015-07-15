@@ -168,6 +168,7 @@
     <Compile Include="CategoriesController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="GalleryController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -192,6 +193,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="LayoutController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductController.generated.cs">
@@ -332,6 +336,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Material\GetAllFiles.cshtml" />
+    <Content Include="Views\Material\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Image\VideoPlayer\" />
