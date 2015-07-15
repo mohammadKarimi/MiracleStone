@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<MiracleStone.Domain.Entity.TblProduct>
 @{
-    ViewBag.Title = "مواد پوشش دهی سنگ";
+    ViewBag.Title = "Stone Coating Materials";
 }
 <div class="page-heading-two">
     <div class="container">
@@ -11,11 +11,6 @@
     </div>
 </div>
 <div class="container">
-    <div class="box-shadow-outer">
-        <div class="box-shadow-block box-shadow-5 text-center"><p><i class="fa fa-tasks red padd-5"></i>@Html.Action(MVC.Categories.GetDescription(int.Parse(@Request.Url.Segments[4].ToString().Replace("/", ""))))</p></div>
-    </div>
-    <br />
-
     @foreach (var item in Model)
     {
 
