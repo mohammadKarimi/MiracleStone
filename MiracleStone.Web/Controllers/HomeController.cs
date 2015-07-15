@@ -15,7 +15,8 @@ namespace MiracleStone.Web.Controllers
         [HttpGet]
         public virtual ActionResult Index()
         {
-            var Query = db.TblCompanyInfo.FirstOrDefault(X => X.Lang == Lang.En);
+          
+                var Query = db.TblCompanyInfo.FirstOrDefault(X => X.Lang == Lang.En);
             string data = Query.AboutUs;
             return View();
         }

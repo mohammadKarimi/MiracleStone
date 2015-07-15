@@ -23,7 +23,7 @@ namespace MiracleStone.Web.Fa.Controllers
         [HttpGet]
         public virtual string GetDefaultImage(int id)
         {
-            var Query = db.TblImage.Where(X => X.IsDefault == true && X.ForeignKey == id && X.TableName == "Material").FirstOrDefault();
+            var Query = db.TblImage.Where(X => X.IsDefault == true && X.ForeignKey == id && X.TableName == "Product").FirstOrDefault();
             if (Query == null)
                 return string.Empty;
             return Query.Address;
@@ -31,7 +31,7 @@ namespace MiracleStone.Web.Fa.Controllers
 
         public virtual PartialViewResult GetAllFiles(int id)
         {
-            return PartialView(db.TblImage.Where(X => X.ForeignKey == id && X.TableName == "Material").ToList());
+            return PartialView(db.TblImage.Where(X => X.ForeignKey == id && X.TableName == "Product").ToList());
         }
 
     }
