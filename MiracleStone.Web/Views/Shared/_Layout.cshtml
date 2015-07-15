@@ -30,17 +30,27 @@
         <div class="header-2">
             <div class="container">
                 <div class="row ">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="logo">
-                            <img src="~/Content/Image/Company/logo-alfa.png" alt="" width="290" height="100" />
+                            <img src="~/Content/Image/Company/logo-alfa.png" alt="" width="250" height="100" />
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div class="navigation  ">
+                    <div class="col-md-10">
+                        <div class="navigation" style=" float: right;">
                             <div id="mgmenu1" class="mgmenu_container">
                                 <ul class="mgmenu">
                                     <li class="mgmenu_button">Menu</li>
                                     <li><a href="@Url.Action(MVC.Home.ActionNames.Index, MVC.Home.Name)" style="">Home</a></li>
+                                    <li>
+                                        <a href="#" style="">Stone Coating Materials<i class="fa fa-angle-down"></i></a>
+                                        <div class="dropdown_container dropdown_2columns" style="display: none;">
+                                            <ul class="dropdown_flyout">
+                                                <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Detergents", categoriesID = 18 })">Detergents</a></li>
+                                                <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Protectors", categoriesID = 19 })">Protectors</a></li>
+                                                <li><a href="@Url.Action(MVC.Material.ActionNames.List, MVC.Material.Name, new { title = "Finishers", categoriesID = 20 })">Finishers</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li>
                                         <a href="#" style="">Block <i class="fa fa-angle-down"></i></a>
                                         <div class="dropdown_container dropdown_2columns" style="display: none;">
