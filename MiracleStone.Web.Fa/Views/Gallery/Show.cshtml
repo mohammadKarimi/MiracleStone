@@ -4,7 +4,7 @@
     var Class = Model.Select(X => X.Class).Distinct();
 }
 
- 
+
 
 <div class="page-heading-two">
     <div class="container">
@@ -30,19 +30,22 @@
             <div id="portfolio">
                 @foreach (var item in Model)
                 {
-                    <div class="p-element design @item.Class">
-                        <div class="element">
-                            <div class="image-style-two">
-                                <img class="img-responsive crouselImg300-200" src="@item.Address" alt="">
-                                <div class="image-hover">
-                                    <div class="image-caption">
-                                        <h4>@item.Name</h4>
-                                        <a href="@item.Address" class="lightbox"><i class="fa fa-search"></i></a> &nbsp;
+                    if (item.Address.Substring(item.Address.Length - 4, 4) != ".pdf")
+                    {
+                        <div class="p-element design @item.Class">
+                            <div class="element">
+                                <div class="image-style-two">
+                                    <img class="img-responsive crouselImg300-200" src="@item.Address" alt="">
+                                    <div class="image-hover">
+                                        <div class="image-caption">
+                                            <h4>@item.Name</h4>
+                                            <a href="@item.Address" class="lightbox"><i class="fa fa-search"></i></a> &nbsp;
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 }
 
                 <div class="clearfix"></div>

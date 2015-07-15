@@ -18,10 +18,14 @@
         }
         if (item.Address.Substring(item.Address.Length - 4, 4) == ".pdf")
         {
-            <a href="@finalurl">
-                <i class="fa fa-file-pdf-o red" style="font-size:40px"></i>
-                <p style="text-align:center">@item.Address.ToString().Split('/').Last().ToString()</p>
-            </a>
+
+            if (item.Address.ToString().Split('/').Last().ToString().ToLower().StartsWith("fa_"))
+            {
+                <a href="@finalurl">
+                    <i class="fa fa-file-pdf-o red" style="font-size:40px"></i>
+                    <p style="text-align:center">@item.Address.ToString().Split('/').Last().ToString()</p>
+                </a>
+            }
         }
     }
 </div>

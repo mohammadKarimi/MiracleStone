@@ -15,7 +15,7 @@
 <div class="container">
     @foreach (var item in Model)
     {
-        var url = MVC.Product.GetDefaultImage( item.TblProductID );
+        var url = MVC.Material.GetDefaultImage( item.TblProductID );
         string finalurl =url.ToString();
         if (!url.ToString().StartsWith("http://miraclestone.org"))
         {

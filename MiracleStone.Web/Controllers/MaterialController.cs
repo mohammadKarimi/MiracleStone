@@ -23,7 +23,7 @@ namespace MiracleStone.Web.Fa.Controllers
         [HttpGet]
         public virtual string GetDefaultImage(int id)
         {
-            var Query = db.TblImage.Where(X => X.IsDefault == true && X.ForeignKey == id && X.TableName == "Product").FirstOrDefault();
+            var Query = db.TblImage.Where(X => X.IsDefault == true && X.ForeignKey == id && X.TableName == "Product" && X.Address.Split('/').Last().ToLower().StartsWith("en_")).Take(1).FirstOrDefault();
             if (Query == null)
                 return string.Empty;
             return Query.Address;

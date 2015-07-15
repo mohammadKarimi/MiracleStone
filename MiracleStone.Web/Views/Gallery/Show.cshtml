@@ -26,6 +26,8 @@
             <div id="portfolio">
                 @foreach (var item in Model)
                 {
+                     if (item.Address.Substring(item.Address.Length - 4, 4) != ".pdf")
+        {
                     <div class="p-element design @item.Class">
                         <div class="element">
                             <div class="image-style-two">
@@ -39,6 +41,7 @@
                             </div>
                         </div>
                     </div>
+                }
                 }
 
                 <div class="clearfix"></div>
