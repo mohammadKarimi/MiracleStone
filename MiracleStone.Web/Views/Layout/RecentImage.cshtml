@@ -6,18 +6,21 @@
 <div class="foot-item-content">
     @foreach (var item in Model)
     {
-        HaveImage = true;
-        if (Counter == 0)
+        if (item.Address.Substring(item.Address.Length - 4,4) != ".pdf")
         {
-          Response.Write("<div class='foot-recent-img'>");
+            HaveImage = true;
+            if (Counter == 0)
+            {
+                Response.Write("<div class='foot-recent-img'>");
+            }
+            if (Counter == 3)
+            {
+                Response.Write("</div><div class='foot-recent-img'>");
+                Counter = 0;
+            }
+            Response.Write("<a href='" + item.Address + "' class='lightbox'><img src='" + item.Address + "'  class='img-responsive img-thumbnail'></a>");
+            Counter++;
         }
-        if (Counter == 3)
-        {
-            Response.Write("</div><div class='foot-recent-img'>");
-            Counter = 0;
-        }
-        Response.Write("<a href='" + item.Address + "' class='lightbox'><img src='" + item.Address + "'  class='img-responsive img-thumbnail'></a>");
-        Counter++;
     }
     @if (HaveImage) { Response.Write("</div>"); }
 </div>
